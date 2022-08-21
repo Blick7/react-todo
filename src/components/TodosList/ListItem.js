@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 const ListItem = (props) => {
   const isDone = props.done ? classes.isDone : classes.isUndone;
+  const classTitleIsDone = props.done ? classes.title : '';
 
   const dispatch = useDispatch();
 
@@ -13,11 +14,17 @@ const ListItem = (props) => {
     dispatch(todosActions.removeItem(props.title));
   };
 
+  const taskIsDoneHandler = () => {
+    dispatch(todosActions.toggleTaskStatus(props.title));
+  };
+
   return (
     <li className={classes['todo-item']}>
-      <div>{props.title}</div>
+      <div className={classTitleIsDone}>{props.title}</div>
       <span className={classes.label}>{props.label}</span>
-      <span className={isDone}>{props.done ? 'done' : 'undone'}</span>
+      <span className={isDone} onClick={taskIsDoneHandler}>
+        {props.done ? 'done(click to change)' : 'undone(click to change)'}
+      </span>
       <div className={classes.removeBtn} onClick={removeItemHandler}>
         <BsFillTrashFill />
       </div>

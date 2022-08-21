@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.title {
+  text-decoration: line-through;
+}
+
 .label {
   background-color: rgb(61, 61, 201);
   color: #fff;

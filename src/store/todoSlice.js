@@ -46,6 +46,11 @@ const todoSlice = createSlice({
       const label = action.payload;
       state.labels = state.labels.filter((item) => item !== label);
     },
+    toggleTaskStatus(state, action) {
+      const title = action.payload;
+      const existingItem = state.items.find((item) => item.title === title);
+      existingItem.done = !existingItem.done;
+    },
   },
 });
 
