@@ -16,6 +16,10 @@ const TodosList = () => {
   const todoItems = useSelector((state) => state.todo.items);
   const [searchState, setSearchState] = useState(todoItems);
 
+  useEffect(() => {
+    setSearchState(todoItems);
+  }, [todoItems]);
+
   const onChangeHandler = (value) => {
     const search = todoItems.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase())

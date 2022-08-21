@@ -8,7 +8,8 @@ const InputForm = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-
+    if (props.onSubmit) {
+    }
     props.onSubmit(inputRef.current.value, selectState);
   };
 
