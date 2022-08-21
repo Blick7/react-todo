@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialTodos = {
-  items: [],
+  items: [
+    { title: 'have a nice day', label: 'fun', done: false },
+    { title: 'RAMONRA', label: 'uncategorized', done: false },
+    { title: 'FUN', label: 'fun', done: true },
+  ],
 };
 
 const todoSlice = createSlice({

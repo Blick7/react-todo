@@ -4,6 +4,7 @@ import ListItem from './ListItem';
 import { useSelector } from 'react-redux';
 
 import classes from './TodosList.module.css';
+import { useEffect, useState } from 'react';
 
 const DUMMY_DATA = [
   { title: 'have a nice day', label: 'fun', done: false },
@@ -13,7 +14,15 @@ const DUMMY_DATA = [
 
 const TodosList = () => {
   const todoItems = useSelector((state) => state.todo.items);
-  console.log(todoItems);
+  const [searchState, setSearchState] = useState(todoItems);
+
+  const onChangeHandler = (value) => {
+    const search = todoItems.filter((item) =>
+      item.title.toLowerCase().includes(value.toLowerCase())
+    );
+    setSearchState(search);
+    console.log(searchState);
+  };
 
   return (
     <div>
@@ -23,9 +32,11 @@ const TodosList = () => {
         id="add-label"
         placeholder="Type name to search"
         selectOptions={['all', 'uncategorized', 'fun']}
+        onChangeIsActive={true}
+        onChange={onChangeHandler}
       />
       <ul>
-        {todoItems.map((item) => (
+        {searchState.map((item) => (
           <ListItem
             key={item.title}
             title={item.title}
@@ -33,6 +44,7 @@ const TodosList = () => {
             done={item.done}
           />
         ))}
+        {searchState.length === 0 && <p>Task not found</p>}
       </ul>
     </div>
   );

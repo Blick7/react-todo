@@ -16,6 +16,10 @@ const InputForm = (props) => {
     setSelectState(event.target.value);
   };
 
+  const onChangeHandler = (event) => {
+    props.onChange(event.target.value);
+  };
+
   return (
     <form className={classes.form} onSubmit={onSubmitHandler}>
       <input
@@ -23,6 +27,7 @@ const InputForm = (props) => {
         id={props.id}
         placeholder={props.placeholder}
         ref={inputRef}
+        onChange={props.onChangeIsActive && onChangeHandler}
       ></input>
       {props.selectOptions && ( // check if select exists
         <select onChange={selectChangeHandler}>
