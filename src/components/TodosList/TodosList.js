@@ -1,6 +1,7 @@
 import Title from '../UI/Title';
 import InputForm from '../UI/InputForm';
 import ListItem from './ListItem';
+import { useSelector } from 'react-redux';
 
 import classes from './TodosList.module.css';
 
@@ -11,6 +12,9 @@ const DUMMY_DATA = [
 ];
 
 const TodosList = () => {
+  const todoItems = useSelector((state) => state.todo.items);
+  console.log(todoItems);
+
   return (
     <div>
       <Title>Todos List</Title>
@@ -21,7 +25,7 @@ const TodosList = () => {
         selectOptions={['all', 'uncategorized', 'fun']}
       />
       <ul>
-        {DUMMY_DATA.map((item) => (
+        {todoItems.map((item) => (
           <ListItem
             key={item.title}
             title={item.title}

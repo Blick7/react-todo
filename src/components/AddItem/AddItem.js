@@ -1,11 +1,16 @@
+import { useDispatch } from 'react-redux';
+import { todosActions } from '../../store/todoSlice';
+
 import Title from '../UI/Title';
 import InputForm from '../UI/InputForm';
 
 import classes from './AddItem.module.css';
 
 const AddItem = () => {
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
+  const dispatch = useDispatch();
+
+  const onSubmitHandler = (title, label) => {
+    dispatch(todosActions.addItem({ title, label, done: false }));
   };
 
   return (
