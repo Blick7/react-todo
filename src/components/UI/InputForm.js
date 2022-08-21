@@ -15,6 +15,7 @@ const InputForm = (props) => {
 
   const selectChangeHandler = (event) => {
     setSelectState(event.target.value);
+    props.onCategoryChange(event.target.value);
   };
 
   const onChangeHandler = (event) => {

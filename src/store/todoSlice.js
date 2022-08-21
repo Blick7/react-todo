@@ -25,6 +25,18 @@ const todoSlice = createSlice({
       const title = action.payload;
       state.items = state.items.filter((item) => item.title !== title);
     },
+    removeItemWithLabel(state, action) {
+      const label = action.payload;
+      console.log(state.items[0].label === label);
+      // removes all items with specified label
+      // state.items = state.items.filter((item) => item.label !== label);
+
+      state.items.map((item) => {
+        return item.label === label
+          ? (item.label = 'uncategorized')
+          : item.label;
+      });
+    },
     addLabel(state, action) {
       const label = action.payload;
       state.labels.push(label);

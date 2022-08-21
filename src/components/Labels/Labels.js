@@ -18,11 +18,11 @@ const Labels = () => {
 
   useEffect(() => {
     setLabelsState(labelsSelector);
-    console.log(labelsSelector);
   }, [labelsSelector]);
 
   const deleteLabelHandler = (title) => {
     dispatch(todosActions.removeLabel(title));
+    dispatch(todosActions.removeItemWithLabel(title));
     setLabelsState(labelsSelector.filter((item) => item !== title));
   };
 

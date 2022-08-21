@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 const TodosList = () => {
   const todoItems = useSelector((state) => state.todo.items);
   const [searchState, setSearchState] = useState(todoItems);
+  const [tagSearchState, setTagSearchState] = useState();
 
   const labelsSelector = useSelector((state) => state.todo.labels);
 
@@ -23,10 +24,36 @@ const TodosList = () => {
   }, [todoItems]);
 
   const onChangeHandler = (value) => {
+    if (value.length === 0) {
+      setSearchState(todoItems);
+      searchByTag(tagSearchState);
+      return;
+    }
     const search = todoItems.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase())
     );
+    searchByTag(tagSearchState);
     setSearchState(search);
+  };
+
+  const searchByTag = (value) => {
+    setTagSearchState(value);
+
+    if (!value) return;
+
+    if (value === 'all') {
+      setSearchState(todoItems);
+      return;
+    }
+
+    const search = todoItems.filter((item) =>
+      item.label.toLowerCase().includes(value.toLowerCase())
+    );
+    setSearchState(search);
+  };
+
+  const categoryChangeHandler = (value) => {
+    searchByTag(value);
   };
 
   return (
@@ -39,6 +66,7 @@ const TodosList = () => {
         selectOptions={['all'].concat(labelsSelector)}
         onChangeIsActive={true}
         onChange={onChangeHandler}
+        onCategoryChange={categoryChangeHandler}
       />
       <ul>
         {searchState.map((item) => (
