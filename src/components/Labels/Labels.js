@@ -37,7 +37,7 @@ const Labels = () => {
       />
       <ul>
         {labelsState.map((item) => (
-          <LabelItem key={item} title={item} onDelete={deleteLabelHandler} />
+          <LabelItem key={item} label={item} onDelete={deleteLabelHandler} />
         ))}
       </ul>
     </div>
