@@ -3,7 +3,7 @@ import InputForm from '../UI/InputForm';
 import ListItem from './ListItem';
 import { useSelector } from 'react-redux';
 
-// import classes from './TodosList.module.css';
+import classes from './TodosList.module.css';
 import { useEffect, useState } from 'react';
 
 // const DUMMY_DATA = [
@@ -57,7 +57,7 @@ const TodosList = () => {
   };
 
   return (
-    <div>
+    <div className={classes.todoList}>
       <Title>Todos List</Title>
       <InputForm
         type="text"

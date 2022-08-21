@@ -5,6 +5,8 @@ import InputForm from '../UI/InputForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { todosActions } from '../../store/todoSlice';
 
+import classes from './Labels.module.css';
+
 const DUMMY_ITEMS = ['uncategorized', 'fun'];
 
 const Labels = () => {
@@ -27,7 +29,7 @@ const Labels = () => {
   };
 
   return (
-    <div>
+    <div className={classes.labels}>
       <Title>Labels</Title>
       <InputForm
         type="text"
