@@ -2,9 +2,19 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialTodos = {
   items: [
-    { title: 'have a nice day', label: 'fun', done: false },
-    { title: 'RAMONRA', label: 'uncategorized', done: false },
-    { title: 'FUN', label: 'fun', done: true },
+    {
+      title: 'have a nice day',
+      label: 'fun',
+      done: false,
+      date: '8/21/2022, 2:46:05 PM',
+    },
+    {
+      title: 'RAMONRA',
+      label: 'uncategorized',
+      done: false,
+      date: '8/21/2022, 2:46:05 PM',
+    },
+    { title: 'FUN', label: 'fun', done: true, date: '8/21/2022, 2:46:05 PM' },
   ],
   labels: ['uncategorized', 'fun'],
 };

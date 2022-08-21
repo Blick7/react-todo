@@ -11,7 +11,15 @@ const AddItem = () => {
   const labelsSelector = useSelector((state) => state.todo.labels);
 
   const onSubmitHandler = (title, label) => {
-    dispatch(todosActions.addItem({ title, label, done: false }));
+    console.log(new Date());
+    dispatch(
+      todosActions.addItem({
+        title,
+        label,
+        done: false,
+        date: new Date().toLocaleString(),
+      })
+    );
   };
 
   return (

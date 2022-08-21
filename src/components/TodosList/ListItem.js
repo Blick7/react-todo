@@ -28,7 +28,7 @@ const ListItem = (props) => {
       <div className={classes.removeBtn} onClick={removeItemHandler}>
         <BsFillTrashFill />
       </div>
-      <div className={classes.timeStamp}>02/04/2022, 5:24:40 PM</div>
+      <div className={classes.timeStamp}>{props.date}</div>
     </li>
   );
 };

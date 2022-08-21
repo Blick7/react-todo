@@ -75,6 +75,7 @@ const TodosList = () => {
             title={item.title}
             label={item.label}
             done={item.done}
+            date={item.date}
           />
         ))}
         {searchState.length === 0 && <p>Task not found</p>}
