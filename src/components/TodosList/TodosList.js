@@ -3,14 +3,14 @@ import InputForm from '../UI/InputForm';
 import ListItem from './ListItem';
 import { useSelector } from 'react-redux';
 
-import classes from './TodosList.module.css';
+// import classes from './TodosList.module.css';
 import { useEffect, useState } from 'react';
 
-const DUMMY_DATA = [
-  { title: 'have a nice day', label: 'fun', done: false },
-  { title: 'RAMONRA', label: 'uncategorized', done: false },
-  { title: 'FUN', label: 'fun', done: true },
-];
+// const DUMMY_DATA = [
+//   { title: 'have a nice day', label: 'fun', done: false },
+//   { title: 'RAMONRA', label: 'uncategorized', done: false },
+//   { title: 'FUN', label: 'fun', done: true },
+// ];
 
 const TodosList = () => {
   const todoItems = useSelector((state) => state.todo.items);

@@ -20,8 +20,10 @@ const todoSlice = createSlice({
         ...item,
       });
     },
-    removeItem(state) {
+    removeItem(state, action) {
       console.log('remove item');
+      const title = action.payload;
+      state.items = state.items.filter((item) => item.title !== title);
     },
     addLabel(state, action) {
       const label = action.payload;
