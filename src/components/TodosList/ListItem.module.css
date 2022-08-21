@@ -1,0 +1,59 @@
+.todo-item {
+  height: 4rem;
+  display: flex; 
+  flex-direction: row;
+}
+
+.label {
+  background-color: rgb(61, 61, 201);
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.3rem;
+  height: 1.5rem;
+}
+
+.isDone {
+  background-color: rgb(27, 114, 27);
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.3rem;
+  height: 1.5rem;
+
+  cursor: pointer;
+
+}
+
+.isUndone {
+  background-color: rgb(192, 192, 76);
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.3rem;
+  height: 1.5rem;
+
+  cursor: pointer;
+
+}
+
+.removeBtn {
+  width: 1rem;
+  background-color: rgb(221, 43, 43);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  height: 1rem;
+  margin-left: 0.3rem;
+
+  cursor: pointer;
+}
+
+.removeBtn svg {
+  display: block;
+}
+
+.timeStamp {
+  margin-left: 0.3rem;
+  padding: 0.2rem;
+
+}

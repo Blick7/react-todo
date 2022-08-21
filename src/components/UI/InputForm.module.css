@@ -1,0 +1,22 @@
+.form { 
+  border: 0.12rem solid rgb(207, 203, 203);
+  border-radius: 0.4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form input {
+  border: none;
+  padding: 1rem;
+  width: 14rem;
+}
+
+.form select {
+  border: none;
+  border-left: 0.12rem solid rgb(207, 203, 203);
+  height: 2rem;
+  padding: 0 0.4rem;
+  margin: 0.3rem;
+}

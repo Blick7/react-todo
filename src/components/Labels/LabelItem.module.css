@@ -1,0 +1,33 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background-color: rgb(61, 61, 201);
+  color: #fff;
+  margin: 1rem;
+  padding: 1rem;
+
+  border-radius: 0.5rem;
+}
+
+.label div{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.label div div:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.label div div:nth-child(2){
+  width: 1rem;
+  background-color: rgb(221, 43, 43);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  height: 1.2rem;
+  margin-left: 0.3rem;
+
+  cursor: pointer;
+}
