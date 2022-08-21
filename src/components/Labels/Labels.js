@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import LabelItem from './LabelItem';
 import Title from '../UI/Title';
 import InputForm from '../UI/InputForm';
@@ -9,8 +10,20 @@ const DUMMY_ITEMS = ['uncategorized', 'fun'];
 const Labels = () => {
   const dispatch = useDispatch();
   const labelsSelector = useSelector((state) => state.todo.labels);
+
+  const [labelsState, setLabelsState] = useState(labelsSelector);
   const formSubmitHandler = (label) => {
     dispatch(todosActions.addLabel(label));
+  };
+
+  useEffect(() => {
+    setLabelsState(labelsSelector);
+    console.log(labelsSelector);
+  }, [labelsSelector]);
+
+  const deleteLabelHandler = (title) => {
+    dispatch(todosActions.removeLabel(title));
+    setLabelsState(labelsSelector.filter((item) => item !== title));
   };
 
   return (
@@ -23,8 +36,8 @@ const Labels = () => {
         onSubmit={formSubmitHandler}
       />
       <ul>
-        {labelsSelector.map((item) => (
-          <LabelItem key={item} title={item} />
+        {labelsState.map((item) => (
+          <LabelItem key={item} title={item} onDelete={deleteLabelHandler} />
         ))}
       </ul>
     </div>

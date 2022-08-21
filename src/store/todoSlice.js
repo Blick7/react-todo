@@ -27,8 +27,10 @@ const todoSlice = createSlice({
       const label = action.payload;
       state.labels.push(label);
     },
-    removeLabel(state) {
+    removeLabel(state, action) {
       console.log('remove label');
+      const label = action.payload;
+      state.labels = state.labels.filter((item) => item !== label);
     },
   },
 });
