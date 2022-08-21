@@ -16,6 +16,8 @@ const TodosList = () => {
   const todoItems = useSelector((state) => state.todo.items);
   const [searchState, setSearchState] = useState(todoItems);
 
+  const labelsSelector = useSelector((state) => state.todo.labels);
+
   useEffect(() => {
     setSearchState(todoItems);
   }, [todoItems]);
@@ -25,7 +27,6 @@ const TodosList = () => {
       item.title.toLowerCase().includes(value.toLowerCase())
     );
     setSearchState(search);
-    console.log(searchState);
   };
 
   return (
@@ -35,7 +36,7 @@ const TodosList = () => {
         type="text"
         id="add-label"
         placeholder="Type name to search"
-        selectOptions={['all', 'uncategorized', 'fun']}
+        selectOptions={['all'].concat(labelsSelector)}
         onChangeIsActive={true}
         onChange={onChangeHandler}
       />

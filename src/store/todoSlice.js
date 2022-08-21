@@ -6,6 +6,7 @@ const initialTodos = {
     { title: 'RAMONRA', label: 'uncategorized', done: false },
     { title: 'FUN', label: 'fun', done: true },
   ],
+  labels: ['uncategorized', 'fun'],
 };
 
 const todoSlice = createSlice({
@@ -21,6 +22,13 @@ const todoSlice = createSlice({
     },
     removeItem(state) {
       console.log('remove item');
+    },
+    addLabel(state, action) {
+      const label = action.payload;
+      state.labels.push(label);
+    },
+    removeLabel(state) {
+      console.log('remove label');
     },
   },
 });
