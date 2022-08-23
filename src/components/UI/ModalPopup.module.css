@@ -1,0 +1,31 @@
+.modal-content {
+  position: absolute; 
+  bottom: 10vh;
+  left: calc(50vw - 18rem);
+  width: 20rem;
+  
+  border-radius: 0.5rem;
+  box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  padding: 1rem;
+  text-align: center;
+}
+
+.progress {
+  height: 0.2rem;
+  width: 0%;
+  background-color: rgb(27, 114, 27);
+  animation: linear 1s progress;
+}
+
+
+@keyframes progress {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
