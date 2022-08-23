@@ -24,20 +24,17 @@ const todoSlice = createSlice({
   initialState: initialTodos,
   reducers: {
     addItem(state, action) {
-      console.log('add item');
       const item = action.payload;
       state.items.push({
         ...item,
       });
     },
     removeItem(state, action) {
-      console.log('remove item');
       const title = action.payload;
       state.items = state.items.filter((item) => item.title !== title);
     },
     removeItemWithLabel(state, action) {
       const label = action.payload;
-      console.log(state.items[0].label === label);
       // removes all items with specified label
       // state.items = state.items.filter((item) => item.label !== label);
 
@@ -52,7 +49,6 @@ const todoSlice = createSlice({
       state.labels.push(label);
     },
     removeLabel(state, action) {
-      console.log('remove label');
       const label = action.payload;
       state.labels = state.labels.filter((item) => item !== label);
     },

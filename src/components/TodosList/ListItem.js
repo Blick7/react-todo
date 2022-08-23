@@ -10,7 +10,6 @@ const ListItem = (props) => {
   const dispatch = useDispatch();
 
   const removeItemHandler = () => {
-    console.log(props.title);
     dispatch(todosActions.removeItem(props.title));
   };
 

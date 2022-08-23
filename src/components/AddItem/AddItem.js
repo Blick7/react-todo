@@ -11,7 +11,6 @@ const AddItem = () => {
   const labelsSelector = useSelector((state) => state.todo.labels);
 
   const onSubmitHandler = (title, label) => {
-    console.log(new Date());
     dispatch(
       todosActions.addItem({
         title,
