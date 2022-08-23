@@ -1,3 +1,9 @@
+# react-todo
+
+Simple Todo App(never done any todos, so the time has come).
+Includes Redux(toolkit)
+[Deploy(Firebase)](https://react-todo-c4afb.firebaseapp.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
