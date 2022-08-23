@@ -6,7 +6,7 @@ const LabelItem = (props) => {
   const itemsSelector = useSelector((state) => state.todo.items);
 
   const deleteLabelHandler = () => {
-    props.onDelete(props.title);
+    props.onDelete(props.label);
   };
 
   let count = 0;

@@ -7,8 +7,6 @@ import { todosActions } from '../../store/todoSlice';
 
 import classes from './Labels.module.css';
 
-const DUMMY_ITEMS = ['uncategorized', 'fun'];
-
 const Labels = () => {
   const dispatch = useDispatch();
   const labelsSelector = useSelector((state) => state.todo.labels);
